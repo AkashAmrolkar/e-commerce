@@ -10,8 +10,11 @@ const HomePageCategories = () => {
   },[])
   console.log(cats);
   return (
-    <div className='mt-10'>
-        <h2 className='text-center font-bold text-3xl pt-8'>Categories</h2>
+    <div className='my-10'>
+        <div className=' md:w-[600px] mx-auto '>
+            <h2 className='text-center font-medium text-3xl py-4 uppercase tracking-wide'>featured Categories</h2>
+            <div className='text-center text-md text-gray-500'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+        </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 py-16 px-4'>
             {
             cats.slice(0, 8).map((cat, index) => {
