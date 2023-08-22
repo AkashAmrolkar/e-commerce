@@ -2,9 +2,17 @@
 import { useState } from 'react';
 import { BiCart, BiStar } from 'react-icons/bi'
 import { Link } from 'react-router-dom';
+// import ImageGallery from "react-image-gallery";
+
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 
 
 const SingleProduct = ({product}) => {
+
+  
 
   const [value, setvalue] = useState(1);
   const [disable, setDisable] = useState(false);
@@ -25,6 +33,7 @@ const SingleProduct = ({product}) => {
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 gap-10 py-16 px-4'>
         <div className="flex justify-center">
+          {/* <ImageGallery items={product.images} /> */}
           <img src={product.thumbnail} />
         </div>
         <div className='flex flex-col gap-5'>
