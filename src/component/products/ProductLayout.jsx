@@ -6,11 +6,11 @@ const ProductLayout = ({prdData}) => {
   
   return (
     <div className='bg-white shadow-md rounded-s-lg flex flex-col gap-5'>
-    <Link to={`/products/${prdData.id}`} className='hover:opacity-70'>
+    <Link to={`/products/${prdData?.id}`} className='hover:scale-105 transition-all'>
       <img src={prdData.thumbnail} alt={prdData.title} className=' object-fill h-[300px] w-full' />
       </Link>
       <div className='flex gap-4 flex-col'>
-        <Link to={`/products/${prdData.id}`} className='hover:text-orange-600'>
+        <Link to={`/products/${prdData?.id}`} className='hover:text-orange-600'>
           <p className=' font-semibold text-center text-2xl'>{prdData.title}</p>
           </Link>
           <div className='flex justify-center items-center'>

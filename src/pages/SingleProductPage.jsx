@@ -8,18 +8,20 @@ import RelatedProduct from '../component/singleproduct/RelatedProduct';
 
 
 const SingleProductPage = () => {
+  const [products, setProducts] = useState([]);
+
   const { id } = useParams();
 
-    const [products, setProducts] = useState([]);
     useEffect(()=>{
        axios.get(`https://dummyjson.com/products/${id}`).then((res)=> setProducts(res.data))
-    },[])
-    console.log(products );
+    },[id])
+
+    console.log("Products from single product page",products );
 
   return (
     <div className='container mx-auto py-10'>
       <SingleProduct product={products} />
-      <RelatedProduct category = {products.category} />
+      <RelatedProduct category = {products?.category} />
     </div>
   )
 }

@@ -10,13 +10,13 @@ const RelatedProduct = ({category}) => {
   const [products, setProducts] = useState([]);
     useEffect(()=>{
        axios.get(`https://dummyjson.com/products/category/${category}`).then((res)=> setProducts(res.data.products))
-    },[])
-    console.log(products);
+    },[category])
+    console.log("Category ", products);
 
   return (
     <div>
       <h2 className='text-center font-bold text-3xl pt-8'>Related Products</h2>
-      <div className='grid grid-cols-1 md:grid-cols-4 gap-10 py-16 '>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 py-16 px-10'>
         {
             products.map((product, index) => {
                 return(
