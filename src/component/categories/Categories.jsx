@@ -5,7 +5,6 @@ const Categories = ({prdData}) => {
     
     <Link to={`/products/category/${prdData}`} className="w-full block h-full">
       <div className="bg-white shadow-md border-white rounded-lg text-center py-8 text-2xl font-medium hover:border-orange-600 hover:text-orange-600">
-        {prdData}
       </div>
     </Link>
     

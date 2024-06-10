@@ -17,7 +17,7 @@ const HomePageCategories = () => {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 py-16 px-4'>
             {
-            cats.slice(0, 8).map((cat, index) => {
+            cats?.slice(0, 8).map((cat, index) => {
                     return(
                         <Categories prdData= {cat} key={index} />
                     )

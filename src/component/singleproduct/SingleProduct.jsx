@@ -4,16 +4,7 @@ import { BiCart, BiStar } from 'react-icons/bi'
 import { Link } from 'react-router-dom';
 // import ImageGallery from "react-image-gallery";
 
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
-
-
 const SingleProduct = ({product}) => {
-
-  
-
   const [value, setvalue] = useState(1);
   const [disable, setDisable] = useState(false);
     

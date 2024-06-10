@@ -2,10 +2,17 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import ProductLayout from '../products/ProductLayout';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { allproducts } from '../../store/slices/storeproducts';
 const AllProducts = () => {
-  const [products, setProducts] = useState([]);
-    useEffect(()=>{
-       axios.get('https://dummyjson.com/products').then((res)=> setProducts(res.data.products))
+  const dispatch = useDispatch()
+  const products = useSelector((state)=>{
+    state.storeProducts.products
+  })
+  useEffect(()=>{
+       const response = axios.get('https://dummyjson.com/products').then((res)=> setProducts(res.data.products))
+      const resJson = response.json()
+       dispatch(allproducts(resJson))
     },[])
     console.log(products);
 
