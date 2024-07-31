@@ -1,13 +1,22 @@
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css'
-import ProductList from './component/productListing';
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import ProductDetails from './pages/ProductDetails'
+import Cart from './pages/Cart'
 
 function App() {
   return (
-    <>
-      <div className="App">
-        <button className="btn">Hello daisyUI</button>
-      </div>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </Router>
   )
 }
 
